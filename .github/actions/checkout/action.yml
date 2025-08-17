@@ -1,0 +1,6 @@
+name: 'Checkout'
+description: 'Проверка репозитория'
+runs:
+  using: 'node12'
+  steps:
+    - run: git clone ${{ github.repository }} .
