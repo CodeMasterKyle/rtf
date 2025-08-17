@@ -1,0 +1,25 @@
+name: Update Online File
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Каждые 10 минут
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Укажите нужную версию Python
+
+      - name: Install requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run update script
+        run: python update_online.py
