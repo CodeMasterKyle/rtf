@@ -314,7 +314,7 @@
                     </div>
                                             <h1 class="hero__title">Добро пожаловать!</h1>
                         <div class="hero__subtitle">
-                            <p>Присоединяйтесь к нам, и вместе мы сделаем великолепную игру.</p>
+                            <p>Присоединяйтесь к нам, и вместе мы создадим великолепную игру..</p>
                             
                             
                         </div>
@@ -395,34 +395,7 @@
     </div>
 </div>
 
-<script>
-    // Функция для получения данных с API
-    async function fetchServerData() {
-        try {
-            const response = await fetch('https://api-online.readytofight.ru/rtfall');
-            const data = await response.json();
 
-            // Обновление значений в HTML
-            document.querySelector('#gf').setAttribute('data-gw-server-online', data.gracia);
-            document.querySelector('#int').setAttribute('data-gw-server-online', data.interlude);
-            document.querySelector('#totalsrv').setAttribute('data-gw-server-online', data.total);
-
-
-            // Обновление видимых значений
-            document.querySelector('#gf .server__count-visible').textContent = data.gracia;
-            document.querySelector('#int .server__count-visible').textContent = data.interlude;
-            document.querySelector('#totalsrv .server__count-visible').textContent = data.total;
-
-            
-           
-        } catch (error) {
-            console.error('Ошибка при получении данных:', error);
-        }
-    }
-
-    // Вызов функции для получения данных
-    fetchServerData();
-</script>
 
     </header>
 
@@ -622,7 +595,34 @@
     </div>
 
 </div>
+<script>
+    // Функция для получения данных с API
+    async function fetchServerData() {
+        try {
+            const response = await fetch('https://api-online.readytofight.ru/rtfall');
+            const data = await response.json();
 
+            // Обновление значений в HTML
+            document.querySelector('#gf').setAttribute('data-gw-server-online', data.gracia);
+            document.querySelector('#int').setAttribute('data-gw-server-online', data.interlude);
+            document.querySelector('#totalsrv').setAttribute('data-gw-server-online', data.total);
+
+
+            // Обновление видимых значений
+            document.querySelector('#gf .server__count-visible').textContent = data.gracia;
+            document.querySelector('#int .server__count-visible').textContent = data.interlude;
+            document.querySelector('#totalsrv .server__count-visible').textContent = data.total;
+
+            
+           
+        } catch (error) {
+            console.error('Ошибка при получении данных:', error);
+        }
+    }
+
+    // Вызов функции для получения данных
+    fetchServerData();
+</script>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery.fancybox.js"></script>
 <script src="js/swiper.min.js"></script>
