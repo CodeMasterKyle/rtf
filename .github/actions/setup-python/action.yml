@@ -1,5 +1,0 @@
-name: 'Setup Python'
-description: 'Настройка Python'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
